@@ -1,7 +1,21 @@
 ﻿@model List<State>
-
+@{
+    var timezones = new List<string> { "Eastern", "Central", "Mountain", "Pacific" };
+}
 <h1>States</h1>
-
+<h3>Filter By Time Zone
+    @if(ViewData["FilterTimeZone"] != null)
+    {
+        <span> @ViewData["FilterTimeZone"]</span>
+    }
+</h3>
+<h4>
+    @foreach(string timezone in timezones)
+    {
+        <span><a href="/states?timezone=@timezone">@timezone</a> |</span>
+    }
+    <span><a href="/states">Clear Filter</a></span>
+</h4>
 @foreach (var state in Model)
 {
     <p><strong>@state.Abbreviation</strong>: <a href="/states/@state.Id">@state.Name</a></p>
