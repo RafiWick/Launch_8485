@@ -87,19 +87,19 @@ Note: Be sure to merge this branch into `main`!
 Edit this file with your answers.
 
 1. What is the difference between `POST` and `PUT`?
-	* < Your answer >  
+	* PUT is the restful verb for updating a data element while POST is for creating a data element. When you are using html you only have GET and POST so you can use POST for updating data elements.
 
 2. What is the purpose of `ViewData`?
-	* < Your answer >  
+	* the purpose of ViewData is to bring information that isn't a part of the model into a view page so that you can display it on the page.  
 
 3. If the State model of our Tourism application also has a field for `Region` (e.g. `Midwest`, `South`, etc.), what might the url be if want to filter for States in both the South region and Eastern time zone?
-	* < Your answer >  
+	* /states?timezone=Eastern&region=South 
 
 4. What is the purpose of the `.Remove()` method in the controller code? What do we need to pass in as a parameter when calling `.Remove()`?
-	* < Your answer >  
+	* .Remove finds the object that is its perameter inside of the collection that it gets called on and removes the object from the collection. we need to pass in the object instance that we want to find and remove from the collection.
 
 5. If you wanted to improve the UI of the State Index page, what would be the filepath of the CSS file you need to create? (Hint: to find the full path of a project file, right-click the file in Solution Explorer and select `Copy Full Path`. You can then paste the path elsewhere.)
-	* < Your answer >  
+	* C:\Users\rafiw\Source\Repos\Launch_8485\Tourism\Views\States\index.cshtml.css
 
 ## Rubric
 
