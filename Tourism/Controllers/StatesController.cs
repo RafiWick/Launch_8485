@@ -26,10 +26,10 @@ namespace Tourism.Controllers
             return View(states);
         }
 
-		public IActionResult New()
-		{
-			return View();
-		}
+        public IActionResult New()
+        {
+            return View();
+        }
 
         [HttpPost]
         [Route("/states/")]
@@ -63,6 +63,16 @@ namespace Tourism.Controllers
             _context.States.Update(state);
             _context.SaveChanges();
             return Redirect($"/states/{stateId}");
+        }
+
+        [HttpPost]
+        [Route("/states/delete/{stateId:int}")]
+        public IActionResult Delete(int stateId)
+        {
+            var state = _context.States.Find(stateId);
+            _context.States.Remove(state);
+            _context.SaveChanges();
+            return Redirect("/states");
         }
     }
 }

@@ -18,7 +18,11 @@
 </h4>
 @foreach (var state in Model)
 {
-    <p><strong>@state.Abbreviation</strong>: <a href="/states/@state.Id">@state.Name</a></p>
+    <p><strong>@state.Abbreviation</strong>: <a href="/states/@state.Id">@state.Name</a>
+        <form method="post" action="/states/delete/@state.Id">
+            <button type="submit">Delete</button>
+        </form>
+    </p>
 }
 
 <p><a href="/states/new">New State</a></p>
