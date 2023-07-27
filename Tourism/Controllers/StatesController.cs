@@ -35,11 +35,28 @@ namespace Tourism.Controllers
             return RedirectToAction("index");
         }
 
-        [Route("states/{stateId:int}")]
+        [Route("/states/{stateId:int}")]
         public IActionResult Show(int stateId)
         {
             var state = _context.States.Find(stateId);
             return View(state);
+        }
+
+        [Route("states/{stateId:int}/edit")]
+        public IActionResult Edit(int stateId)
+        {
+            var state = _context.States.Find(stateId);
+            return View(state);
+        }
+
+        [HttpPost]
+        [Route("/states/{stateId:int}")]
+        public IActionResult Update(int stateId, State state)
+        {
+            state.Id = stateId;
+            _context.States.Update(state);
+            _context.SaveChanges();
+            return Redirect($"/states/{stateId}");
         }
     }
 }
